@@ -1,1 +1,37 @@
-<p>form works!</p>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Dane osobowe</mat-card-title>
+    <mat-card-subtitle>Dane potrzebne do identyfikacji</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <form class="name-form">
+      <mat-form-field class="name-full-width">
+        <mat-label>Imię</mat-label>
+        <input matInput #message maxlength="256" placeholder="Imię">
+        <mat-hint align="start"><strong>Podaj swoje imię</strong> </mat-hint>
+        <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+      </mat-form-field>
+    </form>
+    <form class="nazwisko-form">
+      <mat-form-field class="nazwisko-full-width">
+        <mat-label>Nazwisko</mat-label>
+        <input matInput #message maxlength="256" placeholder="Nazwisko">
+        <mat-hint align="start"><strong>Podaj swoje Nazwisko</strong> </mat-hint>
+        <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+      </mat-form-field>
+    </form>
+    <form class="Jednoskta-form">
+      <mat-form-field class="name-full-width">
+        <mat-label>Jednostka</mat-label>
+        <input matInput #message maxlength="256" placeholder="Jednostka">
+        <mat-hint align="start"><strong>Podaj swoją jednostkę, departament, dział</strong> </mat-hint>
+        <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="accent">Zapisz</button>
+  </mat-card-actions>
+
+</mat-card>
