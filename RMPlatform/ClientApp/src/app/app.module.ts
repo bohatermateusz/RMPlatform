@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 @NgModule({
   declarations: [
     AppComponent,
-    NavMenuComponent
   ],
   imports: [
     BrowserModule,
