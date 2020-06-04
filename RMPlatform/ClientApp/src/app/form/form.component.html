@@ -32,16 +32,14 @@ Start
   <mat-step [stepControl]="secondFormGroup">
     <form  [formGroup]="secondFormGroup">
       <ng-template matStepLabel>Posiadane poufne informacje</ng-template>
-
         <div class="add-button-container">
           <button (click)="loadSubFormComponent()" style="margin-bottom: 25px; margin-left: 0px" mat-fab color="warn" aria-label="add icon">
-            <div *ngIf="loadSubComponent">
-              <app-subform></app-subform>
-            </div>
             <mat-icon>add</mat-icon>
           </button>
+          <div *ngIf="loadSubComponent">
+            <app-subform></app-subform>
+          </div>
         </div>
-
       <div>
         <button style="margin-right: 30px"  mat-raised-button color="accent" matStepperPrevious>Wróć</button>
         <button matStepperNext mat-raised-button color="accent"  >Dalej</button>
