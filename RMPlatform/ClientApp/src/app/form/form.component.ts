@@ -11,6 +11,7 @@ export class FormComponent implements OnInit {
   isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
+  loadSubComponent = false;
 
 
   constructor(private _formBuilder: FormBuilder) { }
@@ -22,6 +23,11 @@ export class FormComponent implements OnInit {
     this.secondFormGroup = this._formBuilder.group({
       secondCtrl: ['', Validators.required]
     });
+  }
+
+  loadSubFormComponent()
+  {
+    this.loadSubComponent = true;
   }
 
 }
