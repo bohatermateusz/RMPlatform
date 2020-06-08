@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-
-
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -9,20 +7,27 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent implements OnInit {
-  isLinear = true;
+
+  isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
+  loadSubComponent = false;
 
-  constructor(private _formBuilder: FormBuilder) {}
 
+  constructor(private _formBuilder: FormBuilder) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.firstFormGroup = this._formBuilder.group({
       firstCtrl: ['', Validators.required]
     });
     this.secondFormGroup = this._formBuilder.group({
       secondCtrl: ['', Validators.required]
     });
+  }
+
+  loadSubFormComponent()
+  {
+    this.loadSubComponent = true;
   }
 
 }
