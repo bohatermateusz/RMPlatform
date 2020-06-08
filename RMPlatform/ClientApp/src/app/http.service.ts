@@ -8,7 +8,7 @@ export class HttpService {
 
 constructor(private http: HttpClient) { }
 
-url = 'https://jsonplaceholder.typicode.com/posts';
+url = 'https://localhost:44320/weatherforecast';
 
 
 getPost(): Observable<Array<Post>>
