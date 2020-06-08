@@ -1,3 +1,4 @@
+import { HttpService } from './http.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
@@ -15,6 +16,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormComponent } from './form/form.component';
 import { SubformComponent } from './subform/subform.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -34,9 +36,10 @@ import { SubformComponent } from './subform/subform.component';
     MatStepperModule,
     FormsModule,
     ReactiveFormsModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [HttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
