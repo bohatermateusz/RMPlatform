@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RMPlatform.Models
 {
@@ -9,11 +7,15 @@ namespace RMPlatform.Models
     {
         A, B, C, D, F
     }
-
+    
+    [Table("Enrollment")]
     public class Enrollment
     {
+        [Key]
         public int EnrollmentID { get; set; }
+        [ForeignKey("Department")]
         public int DepartmentID { get; set; }
+        [ForeignKey("Employee")]
         public int EmployeeID { get; set; }
         public Grade? Grade { get; set; }
 
