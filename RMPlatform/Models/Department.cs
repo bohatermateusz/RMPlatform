@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RMPlatform.Models
@@ -11,6 +10,6 @@ namespace RMPlatform.Models
         public int DepartmentID { get; set; }
         public string Name { get; set; }
 
-        public virtual ICollection<Enrollment> Enrollments { get; set; }
+        public  ICollection<Enrollment> Enrollments { get; set; }
     }
 }

@@ -13,7 +13,7 @@ namespace RMPlatform.Models
         public string Surname { get; set; }
         public DateTimeOffset DataInputDate { get; set; }
 
-        public virtual ICollection<Enrollment> Enrollments { get; set; }
+        public ICollection<Enrollment> Enrollments { get; set; }
     }
 
   
