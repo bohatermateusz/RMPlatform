@@ -15,6 +15,8 @@ namespace RMPlatform.DAL
         public DbSet<Enrollment> Enrollments { get; set; }
         public DbSet<Department> Departments { get; set; }
 
+        public DbSet<ConfidentialInformations> ConfidentialInformations { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
