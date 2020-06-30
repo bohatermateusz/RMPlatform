@@ -24,30 +24,30 @@ namespace RMPlatform.DAL
             context.SaveChanges();
             var courses = new List<Department>
             {
-            new Department{DepartmentID=1050, Name="Chemistry", Credits=3},
-            new Department{DepartmentID=4022,Name="Microeconomics",Credits=3,},
-            new Department{DepartmentID=4041,Name="Macroeconomics",Credits=3,},
-            new Department{DepartmentID=1045,Name="Calculus",Credits=4,},
-            new Department{DepartmentID=3141,Name="Trigonometry",Credits=4,},
-            new Department{DepartmentID=2021,Name="Composition",Credits=3,},
-            new Department{DepartmentID=2042,Name="Literature",Credits=4,}
+            new Department{DepartmentID=1050, Name="Chemistry"},
+            new Department{DepartmentID=4022,Name="Microeconomics"},
+            new Department{DepartmentID=4041,Name="Macroeconomics"},
+            new Department{DepartmentID=1045,Name="Calculus"},
+            new Department{DepartmentID=3141,Name="Trigonometry"},
+            new Department{DepartmentID=2021,Name="Composition"},
+            new Department{DepartmentID=2042,Name="Literature"}
             };
             courses.ForEach(s => context.Departments.Add(s));
             context.SaveChanges();
             var enrollments = new List<Enrollment>
             {
-            new Enrollment{EmployeeID=1, DepartmentID=1050, Grade=Grade.A},
-            new Enrollment{EmployeeID=1,DepartmentID=4022,Grade=Grade.C},
-            new Enrollment{EmployeeID=1,DepartmentID=4041,Grade=Grade.B},
-            new Enrollment{EmployeeID=2,DepartmentID=1045,Grade=Grade.B},
-            new Enrollment{EmployeeID=2,DepartmentID=3141,Grade=Grade.F},
-            new Enrollment{EmployeeID=2,DepartmentID=2021,Grade=Grade.F},
+            new Enrollment{EmployeeID=1, DepartmentID=1050},
+            new Enrollment{EmployeeID=1,DepartmentID=4022},
+            new Enrollment{EmployeeID=1,DepartmentID=4041},
+            new Enrollment{EmployeeID=2,DepartmentID=1045},
+            new Enrollment{EmployeeID=2,DepartmentID=3141},
+            new Enrollment{EmployeeID=2,DepartmentID=2021},
             new Enrollment{EmployeeID=3,DepartmentID=1050},
-            new Enrollment{EmployeeID=4,DepartmentID=1050,},
-            new Enrollment{EmployeeID=4,DepartmentID=4022,Grade=Grade.F},
-            new Enrollment{EmployeeID=5,DepartmentID=4041,Grade=Grade.C},
+            new Enrollment{EmployeeID=4,DepartmentID=1050},
+            new Enrollment{EmployeeID=4,DepartmentID=4022},
+            new Enrollment{EmployeeID=5,DepartmentID=4041},
             new Enrollment{EmployeeID=6,DepartmentID=1045},
-            new Enrollment{EmployeeID=7,DepartmentID=3141,Grade=Grade.A},
+            new Enrollment{EmployeeID=7,DepartmentID=3141},
             };
             enrollments.ForEach(s => context.Enrollments.Add(s));
             context.SaveChanges();
