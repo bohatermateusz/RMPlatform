@@ -1,40 +1,56 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
+using RMPlatform.Models;
 
 namespace RMPlatform.Controllers
 {
-    [Authorize]
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
+        public IEnumerable<Department> Departments { get; set; }
 
-        private readonly ILogger<WeatherForecastController> _logger;
-
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        
+        [HttpGet]
+        public IEnumerable<Department> Get()
         {
-            _logger = logger;
+            Departments = GetDepartments();
+
+            return Departments;
+
+            //var departments = new Department[]
+            //{
+            //    new Department { DepartmentID = 1, Name = "BOR"},
+            //    new Department { DepartmentID = 2, Name = "HR"},
+            //    new Department { DepartmentID = 3, Name = "GIODO"}
+
+            //};
+
+            //context.Departments.AddRange(departments);
+            //context.SaveChanges();
+
+
+            //var rng = new Random();
+            //return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            //{
+            //    Date = DateTime.Now.AddDays(index),
+            //    TemperatureC = rng.Next(-20, 55),
+            //    Summary = Summaries[rng.Next(Summaries.Length)]
+            //})
+            //.ToArray();
         }
 
-        [HttpGet]
-        public IEnumerable<WeatherForecast> Get()
+        private IEnumerable<Department> GetDepartments()
         {
-            var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            using (var context = new DAL.RiskDataContext())
             {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
-            })
-            .ToArray();
+                Departments = context.Departments.ToList();
+            }
+            return Departments;
         }
     }
 }
+

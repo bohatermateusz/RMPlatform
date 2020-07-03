@@ -1,5 +1,7 @@
+import { HttpService } from './../http.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-form',
@@ -13,8 +15,7 @@ export class FormComponent implements OnInit {
   secondFormGroup: FormGroup;
   loadSubComponent = false;
 
-
-  constructor(private _formBuilder: FormBuilder) { }
+  constructor(private _formBuilder: FormBuilder, private httpService: HttpService) { }
 
   ngOnInit(): void {
     this.firstFormGroup = this._formBuilder.group({
@@ -30,4 +31,12 @@ export class FormComponent implements OnInit {
     this.loadSubComponent = true;
   }
 
+  save()
+  {
+    this.httpService.getPost().subscribe(post => {
+      console.log(post);
+    });
+  }
+
 }
+
