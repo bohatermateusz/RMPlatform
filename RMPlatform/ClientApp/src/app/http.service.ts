@@ -9,20 +9,19 @@ export class HttpService {
 constructor(private http: HttpClient) { }
 
 url = 'https://localhost:44320/weatherforecast';
+ 
 
-
-getPost(): Observable<Array<Post>>
+getPost(): Observable<Array<Get>>
 {
- return this.http.get<Array<Post>>(this.url);
+ return this.http.get<Array<Get>>(this.url);
 }
 
 }
 
-export interface Post {
-userId?: number;
-id?: number;
-title?: string;
-body?: string;
+export interface Get {
+departmentID?: number;
+name?: string;
+enrollments?: string;
 }
 
 

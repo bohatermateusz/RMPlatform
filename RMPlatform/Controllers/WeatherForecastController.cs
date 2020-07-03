@@ -1,18 +1,19 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using RMPlatform.Models;
 
 namespace RMPlatform.Controllers
 {
-    [Authorize]
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
         public IEnumerable<Department> Departments { get; set; }
 
+        
         [HttpGet]
         public IEnumerable<Department> Get()
         {
